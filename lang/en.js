@@ -1,12 +1,16 @@
 export default {
   header_beers: `Beers`,
   header_about: `About Us`,
+  header_images: `Images`,
   home_title: `My First Website with NUXT`,
   home_par_1: `Hi!`,
   home_par_2: `Go to the Beers page`,
   beers_title: `Beers`,
   beers_intro: `Data from the API:`,
   beers_meta_description: `Description example on the HEAD`,
+  images: {
+    title: `Images`
+  },
   about : {
     title: `About this app`,
     par_1: `This is my first app/website based on {xxx}.`,

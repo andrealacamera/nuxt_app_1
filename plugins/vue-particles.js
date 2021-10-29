@@ -1,6 +1,6 @@
-import Vue from 'vue'
-import VueParticles from './vue-particles/index'
+import Vue from 'vue';
+import Particles from "particles.vue";
 
 export default () => {
-  Vue.use(VueParticles)
+  Vue.use(Particles);
 }

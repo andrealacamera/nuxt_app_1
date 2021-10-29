@@ -1,35 +1,17 @@
 <template>
   <div>
-    <div class="relative">
-      <nuxt-picture src="sky.jpg" alt="sky background"
-  sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw" />
-      <div class="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-white">
+    <!-- <div class="relative"> -->
+      <!-- <nuxt-picture src="sky.jpg" alt="sky background" sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw" /> -->
+      <!-- <div class="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-white"> -->
+      <div class="w-full h-full absolute flex flex-col justify-center items-center text-white">
         <h1 class="text-2xl">{{ $t("home_title") }}</h1>
         <p class="mt-8">{{ $t("home_par_1") }}</p>
         <p>{{ $t("home_par_2") }}</p>
       </div>
-    </div>
-    <div class="m-4">
+    <!-- </div> -->
+    <div class="">
       <div class="absolute top-0 left-0 -z-10">
-        <!-- <vue-particles class="w-screen h-screen particles-js"
-        color="#333333"
-        :particleOpacity="0.2"
-        :particlesNumber="30"
-        shapeType="polygon"
-        :nb_sides="4"
-        :particleSize="14"
-        linesColor="#00ffff"
-        :linesWidth="1"
-        :lineLinked="true"
-        :lineOpacity="0.4"
-        :linesDistance="150"
-        :moveSpeed="2"
-        :hoverEffect="true"
-        hoverMode="grab"
-        :clickEffect="true"
-        clickMode="push" 
-        >    
-        </vue-particles> -->
+        <Particles class="bg-red-700" id="tsparticles" :options="opt4" />
       </div>
     </div>
   </div>
@@ -46,18 +28,18 @@ export default {
                 value: '#111'
             }
         },
-        fpsLimit: 60,
+        fpsLimit: 20,
         interactivity: {
             events: {
                 onClick: {
-                    enable: true,
+                    enable: false,
                     mode: 'push'
                 },
                 onHover: {
-                    enable: true,
+                    enable: false,
                     mode: 'repulse'
                 },
-                resize: true
+                resize: false
             },
             modes: {
                 bubble: {
@@ -77,13 +59,13 @@ export default {
         },
         particles: {
             color: {
-                value: '#ffffff'
+                value: '#00fefe'
             },
             links: {
                 color: '#ffffff',
                 distance: 150,
                 enable: true,
-                opacity: 0.5,
+                opacity: 0.2,
                 width: 1
             },
             collisions: {
@@ -94,7 +76,7 @@ export default {
                 enable: true,
                 outMode: 'bounce',
                 random: false,
-                speed: 6,
+                speed: 2,
                 straight: false
             },
             number: {
@@ -102,17 +84,18 @@ export default {
                     enable: true,
                     value_area: 800
                 },
-                value: 80
+                value: 20
             },
             opacity: {
                 value: 0.5
             },
             shape: {
-                type: 'circle'
+                type: 'polygon',
+                nb_sides: 4
             },
             size: {
                 random: true,
-                value: 5
+                value: 15
             }
         },
         detectRetina: true
@@ -121,13 +104,13 @@ export default {
         "autoPlay": true,
         "background": {
           "color": {
-            "value": "#111"
+            "value": "#333"
           },
           "image": "",
           "position": "",
           "repeat": "",
           "size": "",
-          "opacity": 0
+          "opacity": 0.3
         },
         "backgroundMask": {
           "composite": "destination-out",
@@ -642,6 +625,223 @@ export default {
             "x": 50,
             "y": 50
           }
+        }
+      },
+      opt3: {
+        "fullScreen": {
+          "enable": true,
+          "zIndex": 0
+        },
+        "background": {
+          "color": "#333"
+        },
+        "interactivity": {
+          "events": {
+            "onClick": {
+              "enable": true,
+              "mode": "push"
+            }
+          },
+          "modes": {
+            "push": {
+              "quantity": 1
+            }
+          }
+        },
+        "particles": {
+          "number": {
+            "value": 40
+          },
+          "opacity": {
+            "value": {
+              "min": 0.1,
+              "max": 1
+            },
+            "animation": {
+              "enable": true,
+              "speed": 1
+            }
+          },
+          "size": {
+            "value": 1
+          }
+        }
+      },
+      opt4: {
+        "fullScreen": {
+          "enable": true,
+          "zIndex": -1
+        },
+        "fpsLimit": 30,
+        "particles": {
+          "number": {
+            "value": 20,
+            "density": {
+              "enable": true,
+              "value_area": 800
+            }
+          },
+          "color": {
+            "value": "#ffffff"
+          },
+          "shape": {
+            "type": "polygon",
+            "stroke": {
+              "width": 0,
+              "color": "#000000"
+            },
+            "polygon": [
+              {
+                "nb_sides": 4,
+                "particles": {
+                  "opacity": {
+                    "value": 0.8,
+                    "random": {
+                      "enable": true,
+                      "minimumValue": 0.5
+                    }
+                  },
+                  "size": {
+                    "value": 12,
+                    "random": {
+                      "enable": true,
+                      "minimumValue": 10
+                    }
+                  },
+                  "color": {
+                    "value": "ff0"
+                  }
+                }
+              },
+              {
+                "nb_sides": 5,
+                "particles": {
+                  "opacity": {
+                    "value": 0.5
+                  },
+                  "size": {
+                    "value": 8,
+                    "random": {
+                      "enable": false
+                    }
+                  },
+                  "color": {
+                    "value": "0ff"
+                  }
+                }
+              },
+              {
+                "nb_sides": 6,
+                "particles": {
+                  "opacity": {
+                    "value": 1,
+                    "random": false
+                  },
+                  "size": {
+                    "value": 20,
+                    "random": {
+                      "enable": true,
+                      "minimumValue": 15
+                    }
+                  },
+                  "color": {
+                    "value": "ff5500",
+                    "opacity": 0.2
+                  }
+                }
+              }
+            ]
+          },
+          "opacity": {
+            "value": 0.5,
+            "random": false,
+            "anim": {
+              "enable": false,
+              "speed": 1,
+              "opacity_min": 0.1,
+              "sync": false
+            }
+          },
+          "size": {
+            "value": 5,
+            "random": true,
+            "anim": {
+              "enable": false,
+              "speed": 40,
+              "size_min": 0.1,
+              "sync": false
+            }
+          },
+          "line_linked": {
+            "enable": true,
+            "distance": 150,
+            "color": "#ffffff",
+            "opacity": 0.4,
+            "width": 1
+          },
+          "move": {
+            "enable": true,
+            "speed": 2,
+            "direction": "none",
+            "random": false,
+            "straight": false,
+            "out_mode": "out",
+            "attract": {
+              "enable": false,
+              "rotateX": 600,
+              "rotateY": 1200
+            }
+          }
+        },
+        "interactivity": {
+          "events": {
+            "onhover": {
+              "enable": false,
+              "mode": "bubble",
+              "parallax": {
+                "enable": false,
+                "force": 60,
+                "smooth": 10
+              }
+            },
+            "onclick": {
+              "enable": false,
+              "mode": "push"
+            },
+            "resize": true
+          },
+          "modes": {
+            "grab": {
+              "distance": 400,
+              "line_linked": {
+                "opacity": 1
+              }
+            },
+            "bubble": {
+              "distance": 400,
+              "size": 40,
+              "duration": 2,
+              "opacity": 0.8
+            },
+            "repulse": {
+              "distance": 200
+            },
+            "push": {
+              "particles_nb": 4
+            },
+            "remove": {
+              "particles_nb": 2
+            }
+          }
+        },
+        "retina_detect": true,
+        "background": {
+          "color": "#6b7280",
+          "opacity": 1,
+          "image": "",
+          "position": "50% 50%",
+          "repeat": "no-repeat",
+          "size": "cover"
         }
       }
     }

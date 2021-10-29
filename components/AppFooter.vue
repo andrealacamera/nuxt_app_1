@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed left-0 bottom-0 w-full bg-blue-800 text-blue-100 p-2">
+  <div class="fixed left-0 bottom-0 w-full bg-gray-700 text-gray-100 p-2">
     <p>
     LOCALE: {{ $i18n.locale }}
     </p>
