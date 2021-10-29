@@ -1,37 +1,43 @@
 <template>
-  <div class="m-4">
-    <h1 class="text-2xl">{{ $t("home_title") }}</h1>
-    <p class="mt-16">{{ $t("home_par_1") }}</p>
-    <p>{{ $t("home_par_2") }}</p>
-    <div class="absolute top-0 left-0 -z-10">
-      <vue-particles class="w-screen h-screen particles-js"
-      color="#333333"
-      :particleOpacity="0.2"
-      :particlesNumber="30"
-      shapeType="polygon"
-      :nb_sides="4"
-      :particleSize="14"
-      linesColor="#00ffff"
-      :linesWidth="1"
-      :lineLinked="true"
-      :lineOpacity="0.4"
-      :linesDistance="150"
-      :moveSpeed="2"
-      :hoverEffect="true"
-      hoverMode="grab"
-      :clickEffect="true"
-      clickMode="push" 
-      >
-    
-    </vue-particles>
-
+  <div>
+    <div class="relative">
+      <nuxt-picture src="sky.jpg" alt="sky background"
+  sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw" />
+      <div class="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-white">
+        <h1 class="text-2xl">{{ $t("home_title") }}</h1>
+        <p class="mt-8">{{ $t("home_par_1") }}</p>
+        <p>{{ $t("home_par_2") }}</p>
+      </div>
     </div>
-
+    <div class="m-4">
+      <div class="absolute top-0 left-0 -z-10">
+        <!-- <vue-particles class="w-screen h-screen particles-js"
+        color="#333333"
+        :particleOpacity="0.2"
+        :particlesNumber="30"
+        shapeType="polygon"
+        :nb_sides="4"
+        :particleSize="14"
+        linesColor="#00ffff"
+        :linesWidth="1"
+        :lineLinked="true"
+        :lineOpacity="0.4"
+        :linesDistance="150"
+        :moveSpeed="2"
+        :hoverEffect="true"
+        hoverMode="grab"
+        :clickEffect="true"
+        clickMode="push" 
+        >    
+        </vue-particles> -->
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
+  layout: 'home',
   data() {
     return {
       opt : {

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <app-header :transparent="false" />
+    <app-header :transparent="true" />
     <Nuxt />
     <app-footer />
   </div>

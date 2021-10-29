@@ -54,6 +54,7 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    '@nuxt/image'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -91,6 +92,21 @@ export default {
       fallbackLocale: 'en',
     }
   },
+
+  image: {
+    dir: 'assets/images',
+    presets: {
+      cover: {
+        modifiers: {
+          fit: "cover",
+          format: "webp",
+          width: 300,
+          height: 300,
+        },
+      },
+    },
+  },
+
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
