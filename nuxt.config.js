@@ -41,7 +41,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '@/plugins/vue-particles.js'
+    '@/plugins/vue-particles.js',
+    { src: '@/plugins/vue-session.js', mode: 'client' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -51,8 +52,40 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
-    '@nuxt/image'
+    '@nuxt/image',
+    '@aceforth/nuxt-optimized-images',  
   ],
+
+  optimizedImages: {
+    inlineImageLimit: 1000,
+    imagesName: ({ isDev }) => isDev ? '[path][name][hash:optimized].[ext]' : 'img/[contenthash:7].[ext]',
+    responsiveImagesName: ({ isDev }) => isDev ? '[path][name]--[width][hash:optimized].[ext]' : 'img/[contenthash:7]-[width].[ext]',
+    handleImages: ['jpeg', 'png', 'svg', 'webp', 'gif'],
+    optimizeImages: true,
+    optimizeImagesInDev: false,
+    defaultImageLoader: 'responsive-loader',
+    mozjpeg: {
+      quality: 80,
+    },
+    optipng: {
+      optimizationLevel: 3,
+    },
+    pngquant: false,
+    gifsicle: {
+      interlaced: true,
+      optimizationLevel: 3,
+    },
+    svgo: {
+      // enable/disable svgo plugins here
+    },
+    webp: {
+      preset: 'default',
+      quality: 75,
+    },
+  },
+
+
+
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [

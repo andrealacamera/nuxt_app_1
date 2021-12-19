@@ -1,8 +1,5 @@
 <template>
   <div>
-    <!-- <div class="relative"> -->
-      <!-- <nuxt-picture src="sky.jpg" alt="sky background" sizes="xl:100vw lg:100vw md:100vw sm:100vw xs:100vw" /> -->
-      <!-- <div class="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-white"> -->
       <div class="w-full h-full absolute flex flex-col justify-center items-center text-white">
         <h1 class="text-2xl">{{ $t("home_title") }}</h1>
         <p class="mt-8">{{ $t("home_par_1") }}</p>
